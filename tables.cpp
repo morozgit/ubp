@@ -8,6 +8,7 @@ Tables::Tables(QWidget *parent) :
     ui(new Ui::Tables)
 {
     ui->setupUi(this);
+
 //    // Создание Таблицы выпрямителей
 //        ui->tableWidget->setRowCount(4); // указываем количество строк
 //        ui->tableWidget->setColumnCount(5); // указываем количество столбцов

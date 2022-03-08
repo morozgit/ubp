@@ -6,6 +6,8 @@
 #include<QTime>
 #include<QTimer>
 #include<QtEndian>
+#include<QtCore>
+#include<QtGui>
 
 namespace Ui {
 class Tables;

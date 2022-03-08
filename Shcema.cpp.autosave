@@ -10,7 +10,7 @@ Shcema::Shcema(QWidget *parent) :
     this->setMinimumHeight(100);
     this->setMinimumWidth(100);
     scene = new QGraphicsScene(this);
-
+    
 
 
 

@@ -12,6 +12,11 @@
 #include <QPoint>
 #include <QPainterPath>
 #include<QResizeEvent>
+#include<QtCore>
+#include<QtGui>
+#include<QGraphicsScene>
+#include<QGraphicsItem>
+
 
 //#include "data.h"
 
@@ -48,6 +53,9 @@ public slots:
 private:
     Ui::Shcema *ui;
     QTimer *timer;
+    QGraphicsScene * scene;
+    QGraphicsItem * item;
+    QGraphicsRectItem *rect;
      int flag = 0;
      int Node_31 = 0;
      int Node_102 = 0;
