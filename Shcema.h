@@ -16,6 +16,8 @@
 #include<QtGui>
 #include<QGraphicsScene>
 #include<QGraphicsItem>
+#include <QXmlStreamReader>
+#include<QMessageBox>
 
 
 //#include "data.h"

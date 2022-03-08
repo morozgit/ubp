@@ -1,5 +1,5 @@
 #include "Shcema.h"
-#include "ui_shcema.h"
+#include"ui_shcema.h"
 
 
 Shcema::Shcema(QWidget *parent) :
@@ -9,9 +9,51 @@ Shcema::Shcema(QWidget *parent) :
     ui->setupUi(this);
     this->setMinimumHeight(100);
     this->setMinimumWidth(100);
-    scene = new QGraphicsScene(this);
+//    scene = new QGraphicsScene(this);
+//    ui->graphicsView->setScene(scene);
+//    rect = scene->addRect(300, 200, 70, 70);
+//    rect = scene->addRect(200, 100, 70, 70);
+    QFile* file = new QFile("SpuM1Schemes.xml");
+    if (!file->open(QFile::ReadOnly | QFile::Text))
+       {
+           qDebug()<<"file not open";
+    }
+        QXmlStreamReader *xmlReader = new QXmlStreamReader(file);
 
 
+        //Parse the XML until we reach end of it
+        while(!xmlReader->atEnd() && !xmlReader->error()) {
+                // Read next element
+                QXmlStreamReader::TokenType token = xmlReader->readNext();
+                //If token is just StartDocument - go to next
+                if(token == QXmlStreamReader::StartDocument) {
+                        continue;
+                }
+                //If token is StartElement - read it
+                if(token == QXmlStreamReader::StartElement) {
+
+                        if(xmlReader->name() == "NameRus") {
+                                continue;
+                        }
+
+                        if(xmlReader->name() == "id") {
+                            qDebug() << xmlReader->readElementText();
+                        }
+                }
+        }
+
+        if(xmlReader->hasError()) {
+                QMessageBox::critical(this,
+                "xmlFile.xml Parse Error",xmlReader->errorString(),
+                QMessageBox::Ok);
+                return;
+        }
+
+        //close reader and flush file
+        xmlReader->clear();
+        file->close();
+
+qDebug()<<"constr";
 
 
 

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'shcema.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.11
+** Created by: Qt User Interface Compiler version 5.14.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
@@ -19,7 +21,9 @@ QT_BEGIN_NAMESPACE
 class Ui_Shcema
 {
 public:
+    QGridLayout *gridLayout;
     QLabel *label;
+    QGraphicsView *graphicsView;
 
     void setupUi(QWidget *Shcema)
     {
@@ -27,13 +31,22 @@ public:
             Shcema->setObjectName(QString::fromUtf8("Shcema"));
         Shcema->resize(1124, 576);
         Shcema->setStyleSheet(QString::fromUtf8(""));
+        gridLayout = new QGridLayout(Shcema);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         label = new QLabel(Shcema);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(780, 20, 251, 41));
         QFont font;
         font.setPointSize(10);
         label->setFont(font);
         label->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
+        graphicsView = new QGraphicsView(Shcema);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+
+        gridLayout->addWidget(graphicsView, 1, 0, 1, 1);
+
 
         retranslateUi(Shcema);
 
@@ -42,8 +55,8 @@ public:
 
     void retranslateUi(QWidget *Shcema)
     {
-        label->setText(QApplication::translate("Shcema", "<html><head/><body><p><span style=\" color:#ffffff;\">TextLabel</span></p></body></html>", nullptr));
-        Q_UNUSED(Shcema);
+        label->setText(QCoreApplication::translate("Shcema", "<html><head/><body><p><span style=\" color:#ffffff;\">TextLabel</span></p></body></html>", nullptr));
+        (void)Shcema;
     } // retranslateUi
 
 };
